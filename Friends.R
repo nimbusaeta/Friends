@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 library(xml2)
 library(rvest)
 library(dplyr)
@@ -2964,20 +2963,3 @@ s10emotions <- ggplot(data = emotions, aes(x = linenumber, y = sentiment, fill =
 
 joy_items <- which(s05nrc$joy > 2)
 s05texto[joy_items]
-
-
-=======
-library(rvest)
-library(dplyr)
-library(syuzhet)
-
-s01e01 <- read_html("http://friends.tktv.net/Episodes1/summaries/1.html")
-s01e01 %>%
-  html_node('body') %>%
-  html_text() -> s01e01_text
-
-text_list <- strsplit(as.character(s01e01_text), '\n')
-text_df <- data.frame(lines=unlist(text_list))
-
-get_nrc_sentiment("SCENE 1: CENTRAL PERK. (ALL PRESENT EXCEPT RACHEL AND ROSS)")
->>>>>>> origin/master
